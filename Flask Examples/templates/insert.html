@@ -1,0 +1,50 @@
+<br><br>
+<div style="">
+<h2>Add New Employee</h2>
+<form class="" action="insert" method="post">
+   <table style="display:inline-table">
+     <tr>
+        <td>Name</td>
+        <td><input type="text" name="name" value=""></td>
+     </tr>
+     <tr>
+        <td>Email</td>
+        <td><input type="text" name="email" value=""></td>
+     </tr>
+     <tr>
+        <td>PhoneNo</td>
+        <td><input type="text" name="phoneNo" value=""></td>
+     </tr>
+   </table><br>
+   <input type="submit" value="ADD">
+   
+  
+</form>
+</div>
+<br><br>
+
+<div class="container">
+<h2>Employee Details</h2>
+<table>
+<tr>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Email</th>
+  <th>PhoneNo</th>
+</tr>
+{% for emp in employees %}
+<tr>
+   <td>{{emp.id}}</td>
+   <td>{{emp.name}}</td>
+   <td>{{emp.email}}</td>
+   <td>{{emp.phoneNo}}</td>
+
+<td>
+ <a href="/delete/{{emp.id}}">Delete</a>
+</td>
+</tr>
+
+
+{% endfor %}
+</div>
+
